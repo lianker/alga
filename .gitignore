@@ -1,0 +1,69 @@
+*.class 
+2 
+ 
+3 # Mobile Tools for Java (J2ME) 
+4 .mtj.tmp/ 
+5 
+ 
+6 # Package Files # 
+7 *.jar 
+8 *.war 
+9 *.ear 
+10 
+ 
+11 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml 
+12 hs_err_pid* 
+
+
+.metadata 
+in/ 
+mp/ 
+.tmp 
+.bak 
+.swp 
+~.nib 
+ocal.properties 
+.settings/ 
+.loadpath 
+
+
+# Eclipse Core 
+.project 
+
+
+# External tool builders 
+.externalToolBuilders/ 
+
+
+# Locally stored "Eclipse launch configurations" 
+*.launch 
+
+# JDT-specific (Eclipse Java Development Tools) 
+.classpath 
+
+
+# Java annotation processor (APT) 
+.factorypath 
+
+
+# sbteclipse plugin 
+.target 
+
+
+# Tern plugin 
+.tern-project 
+
+
+# TeXlipse plugin 
+.texlipse 
+
+
+# STS (Spring Tool Suite) 
+.springBeans 
+
+
+# Code Recommenders 
+.recommenders/ 
+target/
+log/
+
