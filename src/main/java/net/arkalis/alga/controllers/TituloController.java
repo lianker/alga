@@ -1,6 +1,5 @@
 package net.arkalis.alga.controllers;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,11 +26,18 @@ public class TituloController {
 		ModelAndView modelAndView = new ModelAndView("CadastroTitulo");
 		return modelAndView;
 	}
+	
+	@RequestMapping("/pesquisa")
+	public String pesquisa() {
+		
+		return "pesquisaTitulo";
+	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView salvar(Titulo titulo) {
 		titulos.save(titulo);
 		ModelAndView modelAndView = new ModelAndView("CadastroTitulo");
+		modelAndView.addObject("mensagem", "Os Títulos foram salvos com sucesso!");
 		return modelAndView;
 	}
 

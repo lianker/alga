@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="master">
+<head>
+<meta charset="UTF-8" />
+<title>Cadastro de Títulos</title>
+
+</head>
+
+<section layout:fragment="conteudo">
+
+	<form class="form-horizontal" action="/titulos" method="post">
+		<div class="alert alert-success"
+			th:if="${!#strings.isEmpty(mensagem)}">
+			<button type="button" class="close" data-dismiss="alert"></button>
+			<span th:text="${mensagem}"></span>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="clearfix">
+					<h1 class="panel-title aw-title-panel">Cadastro de Títulos</h1>
+					<a href="/titulos/pesquisa" class="btn btn-link aw-link-panel">Pesquisa
+						de Titulos</a>
+				</div>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-group">
+					<label for="descricao" class="col-sm-2 control-label">Descrição</label>
+					<div class="col-sm-5">
+						<input type="text" class="form-control" id="descricao"
+							name="descricao" placeholder="casa 01" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="dataVencimento" class="col-sm-2 control-label">Data
+						do Vencimento</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="dataVencimento"
+							name="dataVencimento" placeholder="10/10/2016" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="valor" class="col-sm-2 control-label">Valor</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="valor" name="valor"
+							placeholder="99,99" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="status" class="col-sm-2 control-label">Status</label>
+					<div class="col-sm-3">
+						<select class="form-control" name="status" id="status">
+							<option th:each="status : ${allStatusTitulo}"
+								th:value="${status}" th:text="${status.descricao}">Pendente</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-info">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+</section>
+</html>
